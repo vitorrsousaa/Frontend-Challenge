@@ -71,18 +71,23 @@ export const CardCheckoutInfo = styled.div`
 export const CardCheckoutQuantityButton = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 5px;
 
   button,
   span {
     font-size: 10px;
+    background: transparent;
   }
 
   div {
     border: 0.3px solid #bfbfbf;
     border-radius: 4px;
+
     font-size: 10px;
 
-    button {
-    }
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px;
   }
 `;
