@@ -5,11 +5,9 @@ import {
 } from './style';
 
 import { FiShoppingBag } from 'react-icons/fi';
-
-import { useDispatch, useSelector } from 'react-redux';
 import cartSlice from '../../../redux/cartSlice';
-import cartReducer from '../../../redux/cartReducer';
 import store from '../../../redux/store';
+
 interface CardProductProps {
   id: number;
   name: string;
@@ -27,8 +25,17 @@ const CardProduct = ({
   id,
 }: CardProductProps) => {
   function handleAddOnCart() {
-    const item = { price, name, photo, id };
-    store.dispatch(cartSlice.actions.addToCart(item));
+    const item = { price, name, photo, id, quantity: 1 };
+
+    const currentProducts = store.getState().cartSlice;
+
+    const itemExists = currentProducts.find(
+      (product) => product.id === item.id
+    );
+
+    itemExists
+      ? store.dispatch(cartSlice.actions.updateToCart(item))
+      : store.dispatch(cartSlice.actions.addToCart(item));
   }
 
   return (

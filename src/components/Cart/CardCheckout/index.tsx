@@ -37,7 +37,7 @@ const CardCheckout = ({}: CardCheckoutProps) => {
                   <p>Qtd:</p>
                   <div>
                     <button>-</button>
-                    <span>0</span>
+                    <span>{product.quantity}</span>
                     <button>+</button>
                   </div>
                 </CardCheckoutQuantityButton>
