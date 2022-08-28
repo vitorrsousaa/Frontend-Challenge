@@ -1,6 +1,35 @@
 import styled from 'styled-components';
 
 export const CardCheckoutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 25rem;
+  width: 100%;
+
+  padding: 3rem;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--white);
+    border-radius: 20px;
+
+    margin: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--black-900);
+    border-radius: 20px;
+  }
+`;
+
+export const CardCheckoutContent = styled.div`
   background: var(--white);
   color: var(--black-900);
 
@@ -65,6 +94,11 @@ export const CardCheckoutInfo = styled.div`
     align-items: center;
     flex-direction: row;
     gap: 1.125rem;
+
+    width: 6.875rem;
+  }
+
+  @media (max-width: 32rem) {
   }
 `;
 

@@ -33,7 +33,7 @@ const Cart = ({}: CartProps) => {
 
       <FooterCart>
         <div>
-          <h1>Total:</h1>
+          <h2>Total:</h2>
           <p>
             {new Intl.NumberFormat('pt-br', {
               style: 'currency',
@@ -42,7 +42,9 @@ const Cart = ({}: CartProps) => {
           </p>
         </div>
 
-        <div>Finalizar Compra</div>
+        <div>
+          <h1>Finalizar Compra</h1>
+        </div>
       </FooterCart>
     </CartContainer>
   );

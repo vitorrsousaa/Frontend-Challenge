@@ -12,8 +12,6 @@ export const CartContainer = styled.section<CartContainerProps>`
   width: 30.375rem;
   height: 100%;
 
-  padding: 2.98rem;
-
   overflow: hidden;
   transform: ${({ open }) => (open ? 'translateX(0px)' : 'translateX(500px)')};
   opacity: ${({ open }) => (open ? '1' : '0')};
@@ -28,6 +26,10 @@ export const CartContainer = styled.section<CartContainerProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 32rem) {
+    width: 20rem;
+  }
 `;
 
 export const HeaderCart = styled.header`
@@ -35,9 +37,12 @@ export const HeaderCart = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  padding: 2rem 2.98rem;
+
   h1 {
     font-size: 1.688rem;
     font-weight: 700;
+    max-width: 12rem;
   }
 
   button {
@@ -60,4 +65,43 @@ export const HeaderCart = styled.header`
   }
 `;
 
-export const FooterCart = styled.div``;
+export const FooterCart = styled.div`
+  div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+  }
+
+  div:last-child {
+    background: var(--black-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+
+    cursor: pointer;
+
+    h1 {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.75rem;
+
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 32rem) {
+    div:first-child {
+      h1 {
+        font-size: 0.5rem;
+      }
+    }
+
+    div:last-child {
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+`;

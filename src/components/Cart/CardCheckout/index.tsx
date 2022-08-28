@@ -4,6 +4,7 @@ import store from '../../../redux/store';
 import {
   CardCheckoutButtonRemove,
   CardCheckoutContainer,
+  CardCheckoutContent,
   CardCheckoutInfo,
   CardCheckoutQuantityButton,
 } from './style';
@@ -50,11 +51,11 @@ const CardCheckout = ({}: CardCheckoutProps) => {
   }
 
   return (
-    <>
+    <CardCheckoutContainer>
       {cartProducts.length > 0 ? (
         <>
           {cartProducts.map((product: CartItem) => (
-            <CardCheckoutContainer key={product.name}>
+            <CardCheckoutContent key={product.name}>
               <CardCheckoutButtonRemove
                 onClick={() => handleRemoveOnCart(product.id)}
               >
@@ -82,7 +83,7 @@ const CardCheckout = ({}: CardCheckoutProps) => {
                   }).format(Number(product.price))}
                 </h2>
               </CardCheckoutInfo>
-            </CardCheckoutContainer>
+            </CardCheckoutContent>
           ))}
         </>
       ) : (
@@ -90,7 +91,7 @@ const CardCheckout = ({}: CardCheckoutProps) => {
           <h1>Você ainda não adicionou nenhum produto no carrinho</h1>
         </>
       )}
-    </>
+    </CardCheckoutContainer>
   );
 };
 
