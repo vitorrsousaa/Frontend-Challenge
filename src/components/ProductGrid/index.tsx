@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import CardProduct from '../CardProduct';
+import CardProduct from './CardProduct';
 import { ProductGridContainer } from './style';
 
 interface ProductGridProps {}
@@ -25,7 +25,6 @@ const ProductGrid = ({}: ProductGridProps) => {
       .then((res) => res.json())
       .then((res) => setProducts(res.products));
   }, []);
-
 
   return (
     <ProductGridContainer>

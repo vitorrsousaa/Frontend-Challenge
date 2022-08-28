@@ -7,9 +7,9 @@ import {
 import { FiShoppingBag } from 'react-icons/fi';
 
 import { useDispatch, useSelector } from 'react-redux';
-import cartSlice from '../../redux/cartSlice';
-import cartReducer from '../../redux/cartReducer';
-import store from '../../redux/store';
+import cartSlice from '../../../redux/cartSlice';
+import cartReducer from '../../../redux/cartReducer';
+import store from '../../../redux/store';
 interface CardProductProps {
   id: number;
   name: string;

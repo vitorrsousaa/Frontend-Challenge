@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import CardProduct from '../components/CardProduct';
+import CardProduct from '../components/ProductGrid/CardProduct';
 import Cart from '../components/Cart';
 import Header from '../components/Header';
 import ProductGrid from '../components/ProductGrid';
