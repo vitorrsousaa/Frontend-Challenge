@@ -1,11 +1,11 @@
-import { CardCheckoutContainer } from './style';
+import { CardCheckoutButtonRemove, CardCheckoutContainer } from './style';
 
 interface CardCheckoutProps {}
 
 const CardCheckout = ({}: CardCheckoutProps) => {
   return (
     <CardCheckoutContainer>
-      <button>X</button>
+      <CardCheckoutButtonRemove>X</CardCheckoutButtonRemove>
       <div>
         <img src="Imagem" alt="" />
         <h1>Apple Watch Series 4 GPs</h1>

@@ -8,16 +8,23 @@ export const CardCheckoutContainer = styled.div`
   border-radius: 8px;
 
   button {
-    background: var(--black-900);
-    color: var(--white);
-
-    font-size: 28px;
-    font-weight: 400;
-
-    padding: 0.25rem 0.75rem;
-
-    border-radius: 100%;
-
     cursor: pointer;
   }
+`;
+
+export const CardCheckoutButtonRemove = styled.button`
+  background: var(--black-900);
+  color: var(--white);
+
+  font-size: 0.875rem;
+  font-weight: 400;
+
+  height: 1.125rem;
+  width: 1.125rem;
+
+  border-radius: 100%;
+
+  position: relative;
+  top: -10px;
+  left: 96%;
 `;
