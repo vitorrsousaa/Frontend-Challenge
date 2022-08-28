@@ -7,19 +7,15 @@ import { useCart } from '../../context/Cart/CartContext';
 
 interface HeaderProps {}
 
-interface CartItem {
-  id: number;
-  quantity: number;
-  name: string;
-  photo: string;
-  price: string;
-}
-
 const Header = ({}: HeaderProps) => {
   const { setCartIsOpen } = useCart();
 
   const cartItems = useSelector((state: any) => {
-    return state.cartSlice.length;
+    const total = state.cartSlice
+      .map((item: any) => item.quantity)
+      .reduce((acc: number, total: number) => acc + total);
+
+    return total;
   });
 
   return (
