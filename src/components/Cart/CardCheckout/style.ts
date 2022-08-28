@@ -36,7 +36,7 @@ export const CardCheckoutContent = styled.div`
   box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 
-  /* padding: 1.25rem; */
+  padding: 0.75rem;
 
   button {
     cursor: pointer;
@@ -74,8 +74,8 @@ export const CardCheckoutButtonRemove = styled.button`
   border-radius: 100%;
 
   position: relative;
-  top: -10px;
-  left: 96%;
+  top: -20px;
+  left: 100%;
   z-index: 10;
 `;
 
@@ -86,6 +86,7 @@ export const CardCheckoutInfo = styled.div`
   }
 
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 
@@ -94,11 +95,15 @@ export const CardCheckoutInfo = styled.div`
     align-items: center;
     flex-direction: row;
     gap: 1.125rem;
+  }
 
-    width: 6.875rem;
+  h1 {
+    max-width: 6.875rem;
   }
 
   @media (max-width: 32rem) {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 `;
 
