@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux';
+import cartSlice from '../../../redux/cartSlice';
+import store from '../../../redux/store';
 import {
   CardCheckoutButtonRemove,
   CardCheckoutContainer,
@@ -21,13 +23,21 @@ const CardCheckout = ({}: CardCheckoutProps) => {
     return state.cartSlice;
   });
 
+  function handleRemoveOnCart(id: number) {
+    store.dispatch(cartSlice.actions.removeItem(id));
+  }
+
   return (
     <>
       {cartProducts.length > 0 ? (
         <>
           {cartProducts.map((product: CartItem) => (
             <CardCheckoutContainer key={product.name}>
-              <CardCheckoutButtonRemove>X</CardCheckoutButtonRemove>
+              <CardCheckoutButtonRemove
+                onClick={() => handleRemoveOnCart(product.id)}
+              >
+                X
+              </CardCheckoutButtonRemove>
               <CardCheckoutInfo>
                 <div>
                   <img src={product.photo} alt={product.name} />
