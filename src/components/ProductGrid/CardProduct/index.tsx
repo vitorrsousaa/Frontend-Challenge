@@ -25,7 +25,7 @@ const CardProduct = ({
   id,
 }: CardProductProps) => {
   function handleAddOnCart() {
-    const item = { price, name, photo, id, quantity: 1 };
+    const item = { price, name, photo, id };
 
     const currentProducts = store.getState().cartSlice;
 
@@ -33,9 +33,17 @@ const CardProduct = ({
       (product) => product.id === item.id
     );
 
-    itemExists
-      ? store.dispatch(cartSlice.actions.updateToCart(item))
-      : store.dispatch(cartSlice.actions.addToCart(item));
+    if (itemExists) {
+      store.dispatch(cartSlice.actions.removeItem(item.id));
+      store.dispatch(
+        cartSlice.actions.addToCart({
+          ...item,
+          quantity: itemExists.quantity + 1,
+        })
+      );
+    } else {
+      store.dispatch(cartSlice.actions.addToCart({ ...item, quantity: 1 }));
+    }
   }
 
   return (
