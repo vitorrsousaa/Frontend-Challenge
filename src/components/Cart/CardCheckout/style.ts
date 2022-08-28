@@ -98,7 +98,7 @@ export const CardCheckoutInfo = styled.div`
   }
 
   h1 {
-    max-width: 6.875rem;
+    width: 6.875rem;
   }
 
   @media (max-width: 32rem) {
