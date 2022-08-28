@@ -52,20 +52,28 @@ export const CardCheckoutButtonRemove = styled.button`
 
 export const CardCheckoutInfo = styled.div`
   img {
-    width: 3.125rem;
-    height: 3.75rem;
+    width: 3.56rem;
+    height: 3.56rem;
   }
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  div:first-child {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.125rem;
+  }
 `;
 
 export const CardCheckoutQuantityButton = styled.div`
   display: flex;
   flex-direction: column;
 
-  button {
+  button,
+  span {
     font-size: 10px;
   }
 
@@ -75,10 +83,6 @@ export const CardCheckoutQuantityButton = styled.div`
     font-size: 10px;
 
     button {
-      &::after {
-        content: '';
-        color: black;
-      }
     }
   }
 `;
