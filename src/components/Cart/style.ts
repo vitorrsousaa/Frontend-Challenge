@@ -50,6 +50,13 @@ export const HeaderCart = styled.header`
     padding: 0.25rem 0.75rem;
 
     border-radius: 100%;
+    cursor: pointer;
+
+    transition: all 0.7s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
