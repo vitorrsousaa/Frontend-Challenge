@@ -27,6 +27,28 @@ const CardCheckout = ({}: CardCheckoutProps) => {
     store.dispatch(cartSlice.actions.removeItem(id));
   }
 
+  function handleSubtractOnCart(product: CartItem) {
+    if (product.quantity > 1) {
+      store.dispatch(cartSlice.actions.removeItem(product.id));
+      store.dispatch(
+        cartSlice.actions.addToCart({
+          ...product,
+          quantity: product.quantity - 1,
+        })
+      );
+    }
+  }
+
+  function handleAddOnCart(product: CartItem) {
+    store.dispatch(cartSlice.actions.removeItem(product.id));
+    store.dispatch(
+      cartSlice.actions.addToCart({
+        ...product,
+        quantity: product.quantity + 1,
+      })
+    );
+  }
+
   return (
     <>
       {cartProducts.length > 0 ? (
@@ -46,9 +68,11 @@ const CardCheckout = ({}: CardCheckoutProps) => {
                 <CardCheckoutQuantityButton>
                   <p>Qtd:</p>
                   <div>
-                    <button>-</button>
+                    <button onClick={() => handleSubtractOnCart(product)}>
+                      -
+                    </button>
                     <span>{product.quantity}</span>
-                    <button>+</button>
+                    <button onClick={() => handleAddOnCart(product)}>+</button>
                   </div>
                 </CardCheckoutQuantityButton>
                 <h2>
