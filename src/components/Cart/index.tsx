@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { useCart } from '../../context/Cart/CartContext';
 import CardCheckout from './CardCheckout';
 import { CartContainer, FooterCart, HeaderCart } from './style';
@@ -12,10 +13,8 @@ const Cart = ({}: CartProps) => {
       .map((item: any) => parseInt(item.price) * item.quantity)
       .reduce((acc: number, total: number) => acc + total);
 
-    console.log(total);
-
     // console.log(typeof parseInt(state.cartSlice[0].quantity));
-    return state.cartSlice.length;
+    return total;
   });
 
   return (
@@ -30,7 +29,12 @@ const Cart = ({}: CartProps) => {
       <FooterCart>
         <div>
           <h1>Total:</h1>
-          <p>R$ 798</p>
+          <p>
+            {new Intl.NumberFormat('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(Number(cartItems))}
+          </p>
         </div>
 
         <div>Finalizar Compra</div>
