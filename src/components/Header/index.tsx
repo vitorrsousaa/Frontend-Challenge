@@ -11,11 +11,17 @@ const Header = ({}: HeaderProps) => {
   const { setCartIsOpen } = useCart();
 
   const cartItems = useSelector((state: any) => {
-    const total = state.cartSlice
-      .map((item: any) => item.quantity)
-      .reduce((acc: number, total: number) => acc + total);
+    if (state.cartSlice.length > 0) {
+      const total = state.cartSlice
+        .map((item: any) => item.quantity)
+        .reduce((acc: number, total: number) => acc + total);
 
-    return total;
+      return total;
+    } else {
+      const total = 0;
+
+      return total;
+    }
   });
 
   return (
