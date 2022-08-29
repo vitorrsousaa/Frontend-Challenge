@@ -27,7 +27,12 @@ const cartSlice = createSlice({
     },
 
     decrementQuantity(state, action: PayloadAction<number>) {
-      state.filter((item) => item.id === action.payload)[0].quantity -= 1;
+      const quantityCurrent = state.filter(
+        (item) => item.id === action.payload
+      )[0].quantity;
+
+      quantityCurrent > 1 &&
+        (state.filter((item) => item.id === action.payload)[0].quantity -= 1);
     },
   },
 });

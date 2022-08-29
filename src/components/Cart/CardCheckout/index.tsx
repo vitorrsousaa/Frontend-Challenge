@@ -29,15 +29,7 @@ const CardCheckout = ({}: CardCheckoutProps) => {
   }
 
   function handleSubtractOnCart(product: CartItem) {
-    if (product.quantity > 1) {
-      store.dispatch(cartSlice.actions.removeItem(product.id));
-      store.dispatch(
-        cartSlice.actions.addToCart({
-          ...product,
-          quantity: product.quantity - 1,
-        })
-      );
-    }
+    store.dispatch(cartSlice.actions.decrementQuantity(product.id));
   }
 
   function handleAddOnCart(product: CartItem) {
