@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import Cart from '../components/Cart';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ProductGrid from '../components/ProductGrid';
 
@@ -18,6 +19,8 @@ const Home: NextPage = () => {
       <Cart />
 
       <ProductGrid />
+
+      <Footer />
     </>
   );
 };
