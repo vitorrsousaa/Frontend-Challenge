@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { CartItem } from '../../interfaces';
 import { getProducts } from '../../services/api';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import CardProduct from './CardProduct';
 import { ProductGridContainer } from './style';
@@ -28,26 +27,6 @@ const ProductGrid = () => {
   }, []);
 
   const [loading, setLoading] = useState(true);
-
-  // useMemo(() => {
-  //   (async () => {
-  //     await getProducts()
-  //       .then((res: any) => setProducts(res))
-  //       .catch((err) => console.log(err))
-  //       .finally(() => setLoading(false));
-  //   })();
-  // }, []);
-
-  // useEffect(() => {
-  //   async () => {
-  //     await getProducts()
-  //       .then((res: any) => setProducts(res))
-  //       .catch((err) => console.log(err))
-  //       .finally(() => setLoading(false));
-  //   };
-  // }, []);
-
-  const teste = true;
 
   return (
     <>
