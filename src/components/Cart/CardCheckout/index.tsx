@@ -41,13 +41,7 @@ const CardCheckout = ({}: CardCheckoutProps) => {
   }
 
   function handleAddOnCart(product: CartItem) {
-    store.dispatch(cartSlice.actions.removeItem(product.id));
-    store.dispatch(
-      cartSlice.actions.addToCart({
-        ...product,
-        quantity: product.quantity + 1,
-      })
-    );
+    store.dispatch(cartSlice.actions.incrementQuantity(product.id));
   }
 
   return (
