@@ -7,7 +7,7 @@ const Cart = () => {
   const { cartOpen, setCartIsOpen } = useCart();
 
   const cartItems = useSelector((state: any) => {
-    if (state.cartSlice.length > 1) {
+    if (state.cartSlice.length > 0) {
       const total = state.cartSlice
         .map((item: any) => parseInt(item.price) * item.quantity)
         .reduce((acc: number, total: number) => acc + total);
