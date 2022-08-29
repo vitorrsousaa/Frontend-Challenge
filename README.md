@@ -22,3 +22,6 @@ A pasta com as páginas vai seguir uma sequência lógica parecida com os demais
 → index.tsx: Responsável por exportar a página; <br />
 → interface.ts: Responsável por exportar as interfaces que são utilizadas globalmente na página; <br />
 → style.ts: StyledComponents da página; <br />
+
+teste unitário - Testa a menor unidade da aplicação
+teste end to end - Verifica açoes do usuário utilizando a aplicaçao
