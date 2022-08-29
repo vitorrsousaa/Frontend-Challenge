@@ -9,7 +9,8 @@ Afim de facilitar a organização e manutenção do código, foi definido um pad
 → pages: Armazena as páginas da aplicação; <br />
 → routes: Armazena as rotas da aplicação; <br />
 → services: Todos os acessos externos; <br />
-→ features: Vai armazenar cada features do estado global do reducer; <br />
+→ interfaces: Armazena todas as interfaces globais da aplicaçao dentro de um arquivo index; <br />
+→ redux: Vai armazenar cada features do estado global do reducer; <br />
 
 Todos os componentes criados vão seguir uma mesma estrutura de organização:
 → index.tsx: Responsável por exportar o componente; <br />

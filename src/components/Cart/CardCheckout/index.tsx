@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
+import { CartItem } from '../../../interfaces';
 import cartSlice from '../../../redux/cartSlice';
 import store from '../../../redux/store';
+
 import {
   CardCheckoutButtonRemove,
   CardCheckoutContainer,
@@ -9,17 +11,7 @@ import {
   CardCheckoutQuantityButton,
 } from './style';
 
-interface CardCheckoutProps {}
-
-interface CartItem {
-  id: number;
-  quantity: number;
-  name: string;
-  photo: string;
-  price: string;
-}
-
-const CardCheckout = ({}: CardCheckoutProps) => {
+const CardCheckout = () => {
   const cartProducts = useSelector((state: any) => {
     return state.cartSlice;
   });

@@ -1,22 +1,10 @@
 import { useEffect, useState } from 'react';
+import { CartItem } from '../../interfaces';
 import CardProduct from './CardProduct';
 import { ProductGridContainer } from './style';
 
-interface ProductGridProps {}
-
-interface ProductProps {
-  id: number;
-  name: string;
-  brand: string;
-  createdAt: string;
-  photo: string;
-  price: string;
-  description: string;
-  updatedAt: string;
-}
-
-const ProductGrid = ({}: ProductGridProps) => {
-  const [products, setProducts] = useState<ProductProps[]>([]);
+const ProductGrid = () => {
+  const [products, setProducts] = useState<CartItem[]>([]);
 
   useEffect(() => {
     fetch(

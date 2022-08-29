@@ -5,9 +5,7 @@ import { useSelector } from 'react-redux';
 import Logo from '../Logo';
 import { useCart } from '../../context/Cart/CartContext';
 
-interface HeaderProps {}
-
-const Header = ({}: HeaderProps) => {
+const Header = () => {
   const { setCartIsOpen } = useCart();
 
   const cartItems = useSelector((state: any) => {

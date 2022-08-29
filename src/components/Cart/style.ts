@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-
-interface CartContainerProps {
-  open: boolean;
-}
+import { CartContainerProps } from './interface';
 
 export const CartContainer = styled.section<CartContainerProps>`
   background: var(--blue);

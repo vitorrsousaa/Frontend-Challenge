@@ -3,9 +3,7 @@ import { useCart } from '../../context/Cart/CartContext';
 import CardCheckout from './CardCheckout';
 import { CartContainer, FooterCart, HeaderCart } from './style';
 
-interface CartProps {}
-
-const Cart = ({}: CartProps) => {
+const Cart = () => {
   const { cartOpen, setCartIsOpen } = useCart();
 
   const cartItems = useSelector((state: any) => {

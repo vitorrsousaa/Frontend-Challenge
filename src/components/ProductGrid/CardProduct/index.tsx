@@ -7,23 +7,9 @@ import {
 import { FiShoppingBag } from 'react-icons/fi';
 import cartSlice from '../../../redux/cartSlice';
 import store from '../../../redux/store';
+import { CartItem } from '../../../interfaces';
 
-interface CardProductProps {
-  id: number;
-  name: string;
-  brand: string;
-  photo: string;
-  price: string;
-  description: string;
-}
-
-const CardProduct = ({
-  price,
-  name,
-  photo,
-  description,
-  id,
-}: CardProductProps) => {
+const CardProduct = ({ price, name, photo, description, id }: CartItem) => {
   function handleAddOnCart() {
     const item = { price, name, photo, id };
 
