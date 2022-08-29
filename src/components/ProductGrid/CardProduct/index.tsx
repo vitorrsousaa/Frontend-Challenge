@@ -8,8 +8,20 @@ import { FiShoppingBag } from 'react-icons/fi';
 import cartSlice from '../../../redux/cartSlice';
 import store from '../../../redux/store';
 import { CartItem } from '../../../interfaces';
+import Skeleton from 'react-loading-skeleton';
 
-const CardProduct = ({ price, name, photo, description, id }: CartItem) => {
+interface CardProductProps extends CartItem {
+  onLoading: boolean;
+}
+
+const CardProduct = ({
+  price,
+  name,
+  photo,
+  description,
+  id,
+  onLoading,
+}: CardProductProps) => {
   function handleAddOnCart() {
     const item = { price, name, photo, id };
 
@@ -34,24 +46,49 @@ const CardProduct = ({ price, name, photo, description, id }: CartItem) => {
 
   return (
     <CardProductContainer>
-      <img src={photo} alt={name} />
+      <>
+        {onLoading ? (
+          <Skeleton
+            count={1}
+            height={158}
+            width={100}
+            style={{
+              margin: 'auto',
+              display: 'flex',
+            }}
+          />
+        ) : (
+          <img src={photo} alt={name} />
+        )}
+      </>
 
       <InfoProductContainer>
         <div>
-          <h1>{name}</h1>
+          <h1>{onLoading ? <Skeleton count={1} width={30} /> : name}</h1>
           <button>
-            {price &&
+            {onLoading ? (
+              <Skeleton
+                count={1}
+                width={30}
+                style={{ background: 'var(--black-600)' }}
+              />
+            ) : (
               new Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
-              }).format(Number(price))}
+              }).format(Number(price))
+            )}
           </button>
         </div>
 
         <h2>
-          {description.length > 60
-            ? `${description.slice(0, 60)}...`
-            : description}
+          {onLoading ? (
+            <Skeleton count={1} width={150} height={30} />
+          ) : description.length > 60 ? (
+            `${description.slice(0, 60)}...`
+          ) : (
+            description
+          )}
         </h2>
       </InfoProductContainer>
 

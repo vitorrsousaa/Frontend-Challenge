@@ -12,6 +12,10 @@ export const ProductGridContainer = styled.section`
 
   max-width: 58rem;
 
+  h6 {
+    color: red;
+  }
+
   @media (min-width: 1140px) {
     grid-template-columns: repeat(4, 1fr);
   }
